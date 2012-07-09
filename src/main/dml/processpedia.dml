@@ -1,0 +1,24 @@
+package pt.ist.processpedia.domain;
+
+class Processpedia {
+    String name;
+}
+
+class User {
+    String email;
+    String password;
+}
+
+class Request {
+    String subject;
+}
+
+relation ProcesspediaHasUsers {
+    Processpedia playsRole { multiplicity 1..1; }
+    User playsRole user { multiplicity 0..*; }
+}
+
+relation ProcesspediaHasRequests {
+    Processpedia playsRole { multiplicity 1..1; }
+    Request playsRole request { multiplicity 0..*; }
+}
