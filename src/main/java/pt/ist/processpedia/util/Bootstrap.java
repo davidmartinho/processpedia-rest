@@ -9,7 +9,7 @@ public class Bootstrap {
     public static void run() {
         try {
             FenixFramework.initialize(new Config() {{
-                domainModelPaths = new String[] { "/cenas.dml" };
+                domainModelPaths = new String[] { "/processpedia.dml" };
                 dbAlias = "//localhost:3306/cenas";
                 dbUsername = "root";
                 dbPassword = "";

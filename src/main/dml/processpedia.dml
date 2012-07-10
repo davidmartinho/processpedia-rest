@@ -1,8 +1,6 @@
 package pt.ist.processpedia.domain;
 
-class Processpedia {
-    String name;
-}
+class Processpedia;
 
 class User {
     String email;
@@ -11,6 +9,15 @@ class User {
 
 class Request {
     String subject;
+    DateTime lastUpdate;
+}
+
+class Queue {
+    String name;
+}
+
+class Tag {
+    String label;
 }
 
 relation ProcesspediaHasUsers {
@@ -21,4 +28,19 @@ relation ProcesspediaHasUsers {
 relation ProcesspediaHasRequests {
     Processpedia playsRole { multiplicity 1..1; }
     Request playsRole request { multiplicity 0..*; }
+}
+
+relation ProcesspediaHasQueues {
+    Processpedia playsRole { multiplicity 1..1; }
+    Queue playsRole queue { multiplicity 0..*; }
+}
+
+relation ProcesspediaHasTags {
+    Processpedia playsRole { multiplicity 1..1; }
+    Tag playsRole tag { multiplicity 0..*; }
+}
+
+relation RequestHasInitiator {
+    Request playsRole initiatedRequest { multiplicity 0..*; }
+    User playsRole initiator { multiplicity 1..1; }
 }
